@@ -21,13 +21,13 @@ jobs:
           dotnet-version: "10.x"
 
       - name: Restore dependencies
-        run: dotnet restore dotnet-core-api-w-postgres.sln
+        run: dotnet restore market-data-api.sln
 
       - name: Build
-        run: dotnet build dotnet-core-api-w-postgres.sln --no-restore --configuration Release
+        run: dotnet build market-data-api.sln --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test dotnet-core-api-w-postgres.sln --no-build --configuration Release --logger "trx;LogFileName=test-results.trx"
+        run: dotnet test market-data-api.sln --no-build --configuration Release --logger "trx;LogFileName=test-results.trx"
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
