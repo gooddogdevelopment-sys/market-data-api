@@ -5,8 +5,8 @@ namespace dotnet_core_api_w_postgres.Data;
 
 public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {
-    // Add DbSets here:
-    // public DbSet<MyEntity> MyEntities => Set<MyEntity>();
+    public DbSet<Watchlist> Watchlists => Set<Watchlist>();
+    public DbSet<WatchlistItem> WatchlistItems => Set<WatchlistItem>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
